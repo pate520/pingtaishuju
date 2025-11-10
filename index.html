@@ -63,13 +63,24 @@
     <p>参考图：</p>
     <img src="image copy 6.png" alt="需求七参考图">
 
-    <h2>需求八：增加四个字段到「AI 理财包体验金数据统计」和表单的表头</h2>
-    <p>四个字段为：活动奖励、理财返佣、合约返佣、现货返佣</p>
-    <p>已经在c端用户管理-用户列表-用户数据总览中实现</p>
+    <h2>需求八：表单的表头增加字段</h2>
+    <p>在用户列表的表头中增加字段，参考c端用户管理-用户列表-用户数据总览中的实现</p>
     <img src="image copy 7.png" alt="需求八示意图">
 
     <h2>需求九：平台提币数据总览 (折合USDT)的时间维度</h2>
     <p>在右上角增加三个时间维度标签：30天、7天、当日，默认选中30天</p>
+
+    <h2>需求十：新增「薅羊毛板块」数据统计</h2>
+    <p>在「AI理财包体验金数据统计」的右侧新增一个独立的数据统计板块，名称为「薅羊毛板块」</p>
+    <p><strong>包含以下字段：</strong></p>
+    <ul>
+        <li><strong>活动奖励</strong>：显示活动奖励金额及较上期对比</li>
+        <li><strong>理财返佣</strong>：显示理财返佣金额及较上期对比</li>
+        <li><strong>合约返佣</strong>：显示合约返佣金额及较上期对比</li>
+        <li><strong>现货返佣</strong>：显示现货返佣金额及较上期对比</li>
+        <li><strong>总计</strong>：以上四个字段的总和及较上期对比</li>
+    </ul>
+    <p>所有字段均需显示「较上期」数据，增长显示绿色（带+号和括号），减少显示红色（带-号和括号）</p>
 
     <p><strong>时间范围计算规则：</strong></p>
     <ul>
@@ -237,7 +248,7 @@
             }
             .bottom-stats {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 gap: 20px;
             }
         </style>
@@ -517,6 +528,12 @@
                             <span class="stat-compare-value increase">(+150.25)</span>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <h4>薅羊毛板块</h4>
+                <div class="stats-row">
                     <div class="stat-item">
                         <div class="stat-label">活动奖励</div>
                         <div class="stat-value">1250.50</div>
@@ -525,8 +542,6 @@
                             <span class="stat-compare-value increase">(+300.00)</span>
                         </div>
                     </div>
-                </div>
-                <div class="stats-row">
                     <div class="stat-item">
                         <div class="stat-label">理财返佣</div>
                         <div class="stat-value">3456.78</div>
@@ -543,12 +558,22 @@
                             <span class="stat-compare-value increase">(+1200.00)</span>
                         </div>
                     </div>
+                </div>
+                <div class="stats-row">
                     <div class="stat-item">
                         <div class="stat-label">现货返佣</div>
                         <div class="stat-value">5678.90</div>
                         <div class="stat-compare">
                             <span class="stat-compare-label">较上期</span>
                             <span class="stat-compare-value increase">(+800.00)</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">总计</div>
+                        <div class="stat-value">19309.63</div>
+                        <div class="stat-compare">
+                            <span class="stat-compare-label">较上期</span>
+                            <span class="stat-compare-value increase">(+2800.00)</span>
                         </div>
                     </div>
                 </div>
